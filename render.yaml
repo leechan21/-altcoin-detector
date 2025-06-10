@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: richan-trader
+    name: altcoin-detector
     env: node
+    region: oregon
     plan: free
-    buildCommand: npm run build
+    buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
