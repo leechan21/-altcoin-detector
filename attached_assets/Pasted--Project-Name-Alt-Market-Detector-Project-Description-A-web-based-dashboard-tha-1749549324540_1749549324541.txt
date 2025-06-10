@@ -1,0 +1,53 @@
+📌 Project Name: 알트장 감지기 (Alt Market Detector)
+
+📌 Project Description:
+A web-based dashboard that tracks real-time Binance USDⓈ‑M Futures market data, detects high-momentum altcoins based on 24h price change and 15-minute volatility, and alerts the user when specific trading conditions are met (ex: step-up pattern, 15m volatility ≥ 2%, etc). Built for a trader following a volatility + breakout-based entry strategy.
+
+📌 Target Platform:
+Web (responsive, usable on both desktop and mobile)
+
+📌 Operating Environment:
+Online only — connects to Binance API in real-time
+
+📌 Hosting:
+Run on Replit for development; final deployment can be done via Vercel or Netlify
+
+📌 Interface Style:
+- Dark theme
+- Minimalist
+- Trading dashboard feel
+- Korean labels (UI should be in Korean)
+
+📌 Example Applications:
+- Binance desktop UI
+- CoinGlass "Top Gainers"
+- Richan Trader entry detection strategy (based on volatility and candle step-up patterns)
+
+📌 Expected Outputs:
+- Top 10 USDⓈ‑M altcoins by 24h % change (descending)
+- For each: symbol, price change %, volume, current price
+- Volatility score based on 15-minute candle highs/lows
+- Pattern tag: Step-up pattern (if detected)
+- Alerts if coin matches: volatility ≥ 2% + step-up candles
+
+📌 Additional Features:
+- Manual refresh button + auto-refresh every 15 sec
+- Logs last updated time (UTC+0 기준으로 표시)
+- Badge indicators (변동성, 계단형 등)
+- Notification-ready structure (for future alerting feature)
+- API key/secret securely stored in Replit secrets
+
+📌 Language Preferences:
+- Replit Agent interaction: English
+- App Interface: Korean (e.g. “변동성”, “추천 코인”, “실시간 갱신”)
+
+📌 Technical API Info:
+- Use Binance Futures (USDⓈ‑M) API:
+  - GET `/fapi/v1/ticker/24hr` → to get 24h % change
+  - GET `/fapi/v1/klines?interval=15m` → for volatility/pattern checks
+
+📌 Timezone Note:
+Sort Change(%) using UTC+0 00:00 기준 (Binance standard)
+
+✅ Objective:
+Help the user visually and programmatically detect when a coin meets high volatility breakout criteria based on Binance data in real time, to assist in timing entry for trading strategies.
